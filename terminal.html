@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terminal</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            background: black;
+            color: white;
+            font-family: monospace;
+            display: flex;
+            flex-direction: column;
+        }
+        #terminal-output {
+            flex-grow: 1;
+            padding: 10px;
+            overflow-y: auto;
+        }
+        #terminal-input {
+            border: none;
+            background: black;
+            color: white;
+            padding: 10px;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <div id="terminal-output"></div>
+    <input type="text" id="terminal-input" autofocus>
+    <script>
+        const terminalInput = document.getElementById('terminal-input');
+        const terminalOutput = document.getElementById('terminal-output');
+
+        terminalInput.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter') {
+                const command = terminalInput.value;
+                terminalOutput.innerHTML += `<div>$ ${command}</div>`;
+                terminalInput.value = '';
+
+                // Simple command processing
+                if (command === 'help') {
+                    terminalOutput.innerHTML += '<div>Available commands: help, clear</div>';
+                } else if (command === 'clear') {
+                    terminalOutput.innerHTML = '';
+                } else {
+                    terminalOutput.innerHTML += '<div>Command not found</div>';
+                }
+                terminalOutput.scrollTop = terminalOutput.scrollHeight;
+            }
+        });
+    </script>
+</body>
+</html>
