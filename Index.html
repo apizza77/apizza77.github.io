@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Windows 11 Simulator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="desktop">
+        <div class="taskbar">
+            <button class="start-button">Start</button>
+            <div class="taskbar-apps">
+                <button class="taskbar-app" data-app="terminal.html">Terminal</button>
+                <button class="taskbar-app" data-app="apps/app1.html">App1</button>
+                <button class="taskbar-app" data-app="apps/app2.html">App2</button>
+            </div>
+        </div>
+        <div class="start-menu">
+            <button class="change-background">Change Background</button>
+            <!-- More start menu items -->
+        </div>
+        <iframe id="app-frame" src=""></iframe>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
