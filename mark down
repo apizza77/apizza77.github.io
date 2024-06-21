@@ -1,0 +1,11 @@
+windows11-simulator/
+├── index.html
+├── style.css
+├── script.js
+├── terminal.html
+├── apps/
+│   ├── app1.html
+│   └── app2.html
+└── images/
+    ├── background1.jpg
+    └── background2.jpg
